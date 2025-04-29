@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import CartPage from './pages/CartPage';
 import ItemDetailPage from './pages/ItemDetailPage';
 import WishlistPage from './pages/WishlistPage';
+import SearchPage from './pages/SearchPage';
 import { ItemProvider } from './context/ItemContext';
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
               <Route path="/cart" element={<CartPage />} />
               <Route path="/item/:id" element={<ItemDetailPage />} />
               <Route path="/wishlist" element={<WishlistPage />} />
+              <Route path="/search" element={<SearchPage />} />
             </Routes>
           </div>
         </div>

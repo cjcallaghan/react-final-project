@@ -1,21 +1,31 @@
 .cart-page {
     margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-container {
     display: flex;
     gap: 30px;
     margin-top: 20px;
+    width: 100%;
+    flex-wrap: wrap;
 }
 
 .cart-items {
     flex: 1.5;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .cart-item {
     display: flex;
     border-bottom: 1px solid #e0e0e0;
     padding: 20px 0;
+    flex-wrap: wrap;
 }
 
 .cart-item-image {
@@ -23,6 +33,7 @@
     height: 100px;
     overflow: hidden;
     border-radius: 4px;
+    flex-shrink: 0;
 }
 
 .cart-item-image img {
@@ -34,6 +45,9 @@
 .cart-item-details {
     flex: 1;
     padding: 0 20px;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
 }
 
 .cart-item-details h3 {
@@ -70,6 +84,7 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: space-between;
+    min-width: 100px;
 }
 
 .item-total {
@@ -100,6 +115,9 @@
     align-self: flex-start;
     position: sticky;
     top: 20px;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
 }
 
 .summary-item {
@@ -144,4 +162,62 @@
 .empty-cart {
     text-align: center;
     padding: 50px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Media Queries for Responsive Cart Page */
+@media (max-width: 992px) {
+    .cart-container {
+        flex-direction: column;
+    }
+
+    .cart-summary {
+        width: 100%;
+        position: static;
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-item {
+        padding: 15px 0;
+    }
+
+    .cart-item-image {
+        width: 80px;
+        height: 80px;
+    }
+
+    .cart-item-details {
+        padding: 0 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-item {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .cart-item-details {
+        padding: 15px 0;
+        order: 2;
+        width: 100%;
+        align-items: center;
+    }
+
+    .cart-item-actions {
+        order: 3;
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 10px;
+    }
 }

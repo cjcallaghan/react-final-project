@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useItems } from '../context/ItemContext';
 import '../styles/Navbar.css';
 
 const Navbar = () => {
-    const { cartItems } = useItems();
+    const { cartItems, setSearchResults } = useItems();
     const [searchQuery, setSearchQuery] = useState('');
+    const navigate = useNavigate();
 
     const totalCartItems = cartItems.reduce((total, item) => total + item.quantity, 0);
 
     const handleSearch = (e) => {
         e.preventDefault();
-        // Search functionality would be implemented here
-        console.log('Searching for:', searchQuery);
-        setSearchQuery('');
+        if (searchQuery.trim() !== '') {
+            setSearchResults(searchQuery);
+            navigate('/search');
+        }
     };
 
     return (

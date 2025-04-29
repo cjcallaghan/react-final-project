@@ -49,6 +49,22 @@ const initialItems = [
         image: "https://via.placeholder.com/300x400?text=Leather+Jacket",
         description: "A classic leather jacket that adds an edge to any outfit. Made from high-quality leather with a comfortable lining.",
         featured: false
+    },
+    {
+        id: 7,
+        name: "Knit Cardigan",
+        price: 79.99,
+        image: "https://via.placeholder.com/300x400?text=Knit+Cardigan",
+        description: "A versatile knit cardigan that can be dressed up or down. Perfect for layering in any season.",
+        featured: false
+    },
+    {
+        id: 8,
+        name: "Summer Straw Hat",
+        price: 34.99,
+        image: "https://via.placeholder.com/300x400?text=Straw+Hat",
+        description: "A stylish straw hat perfect for beach days and summer outings. Provides shade while keeping you looking fashionable.",
+        featured: false
     }
 ];
 
@@ -60,6 +76,8 @@ export const ItemProvider = ({ children }) => {
     const [items] = useState(initialItems);
     const [cartItems, setCartItems] = useState([]);
     const [wishlistItems, setWishlistItems] = useState([]);
+    const [searchQuery, setSearchQuery] = useState('');
+    const [searchResults, setSearchResults] = useState([]);
 
     // Load data from localStorage on initial render
     useEffect(() => {
@@ -79,6 +97,25 @@ export const ItemProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem('wishlist', JSON.stringify(wishlistItems));
     }, [wishlistItems]);
+
+    // Update search results whenever search query changes
+    useEffect(() => {
+        if (searchQuery) {
+            const query = searchQuery.toLowerCase();
+            const results = items.filter(item =>
+                item.name.toLowerCase().includes(query) ||
+                item.description.toLowerCase().includes(query)
+            );
+            setSearchResults(results);
+        } else {
+            setSearchResults([]);
+        }
+    }, [searchQuery, items]);
+
+    // Set search query and trigger search results update
+    const setSearchResultsQuery = (query) => {
+        setSearchQuery(query);
+    };
 
     // Get an item by its ID
     const getItemById = (id) => {
@@ -151,6 +188,9 @@ export const ItemProvider = ({ children }) => {
         items,
         cartItems,
         wishlistItems,
+        searchQuery,
+        searchResults,
+        setSearchResults: setSearchResultsQuery,
         getItemById,
         addToCart,
         removeFromCart,
