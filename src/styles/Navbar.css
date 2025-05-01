@@ -1,0 +1,118 @@
+.navbar {
+    background-color: #2D2D2D;
+    padding: 15px 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 500px;
+    margin: 0 20px;
+}
+
+.search-bar form {
+    display: flex;
+    width: 100%;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 16px;
+    width: 100%;
+}
+
+.search-bar button {
+    padding: 8px 15px;
+    background-color: #4a4a4a;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.cart-link {
+    position: relative;
+}
+
+.cart-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+/* Media Queries for Responsive Navbar */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 12px 15px;
+    }
+
+    .navbar-logo {
+        flex-basis: 100%;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .search-bar {
+        order: 3;
+        max-width: 100%;
+        margin: 10px 0 0;
+        flex-basis: 100%;
+    }
+
+    .navbar-links {
+        justify-content: center;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-links {
+        gap: 15px;
+        font-size: 14px;
+    }
+
+    .search-bar input,
+    .search-bar button {
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+}

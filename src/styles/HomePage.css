@@ -1,0 +1,63 @@
+.home-page {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 60px 20px;
+    background-color: #e8e4db;
+    border-radius: 8px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 10px;
+}
+
+.hero-section p {
+    font-size: 18px;
+    color: #555;
+}
+
+.featured-section {
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Media Queries for Responsive Home Page */
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 40px 15px;
+    }
+
+    .hero-section h1 {
+        font-size: 28px;
+    }
+
+    .hero-section p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-section {
+        padding: 30px 10px;
+    }
+
+    .hero-section h1 {
+        font-size: 24px;
+    }
+
+    .hero-section p {
+        font-size: 14px;
+    }
+}

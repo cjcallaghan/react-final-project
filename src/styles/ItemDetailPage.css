@@ -1,0 +1,154 @@
+.item-detail-page {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-detail-container {
+    display: flex;
+    gap: 30px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.item-image-large {
+    flex: 1;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-width: 300px;
+}
+
+.item-image-large img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-details {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-details h1 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.item-price-large {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 15px 0;
+}
+
+.item-description {
+    margin: 20px 0;
+    line-height: 1.6;
+}
+
+.item-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.add-to-cart-btn,
+.wishlist-btn {
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    border: none;
+}
+
+.add-to-cart-btn {
+    background-color: #2D2D2D;
+    color: white;
+}
+
+.add-to-cart-btn:hover {
+    background-color: #444;
+}
+
+.wishlist-btn {
+    background-color: white;
+    color: #2D2D2D;
+    border: 1px solid #2D2D2D;
+}
+
+.wishlist-btn:hover {
+    background-color: #f5f5f5;
+}
+
+.wishlist-btn.in-wishlist {
+    background-color: #ffedee;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+}
+
+.wishlist-btn.in-wishlist:hover {
+    background-color: #ffe0e0;
+}
+
+.item-not-found {
+    text-align: center;
+    padding: 50px 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Media Queries for Responsive Item Detail Page */
+@media (max-width: 992px) {
+    .item-image-large {
+        height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .item-detail-container {
+        flex-direction: column;
+    }
+
+    .item-image-large {
+        width: 100%;
+        height: 350px;
+        max-width: none;
+    }
+
+    .item-details h1 {
+        font-size: 24px;
+    }
+
+    .item-price-large {
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item-image-large {
+        height: 300px;
+    }
+
+    .item-details h1 {
+        font-size: 20px;
+    }
+
+    .item-price-large {
+        font-size: 20px;
+    }
+
+    .add-to-cart-btn,
+    .wishlist-btn {
+        padding: 12px;
+        font-size: 14px;
+    }
+}
