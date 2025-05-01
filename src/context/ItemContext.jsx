@@ -1,4 +1,5 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
+<<<<<<< HEAD
 import eveningGown from "../assets/img/eveningGown.jpg"
 import cozySweater from "../assets/img/sweater.jpg"
 import jeans from "../assets/img/jeans.jpg"
@@ -39,6 +40,8 @@ import wideLegPants from "../assets/img/widelegs.jpg"
 import denimJacket from "../assets/img/denimJacket.jpg"
 import velvetHeadband from "../assets/img/velvetHeadband.jpg"
 import moonStarEarrings from "../assets/img/dropEarrings.jpg"
+=======
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
 
 // Sample items data
 const initialItems = [
@@ -46,69 +49,112 @@ const initialItems = [
         id: 1,
         name: "Cozy Knit Sweater",
         price: 69.99,
+<<<<<<< HEAD
         image: cozySweater,
         description: "A warm and stylish sweater perfect for colder days. Made with high-quality yarn for maximum comfort and durability.",
         featured: true,
         category: "sweater, outerwear, cream, knit, cozy"
+=======
+        image: "https://via.placeholder.com/300x400?text=Cozy+Knit+Sweater",
+        description: "A warm and stylish sweater perfect for colder days. Made with high-quality yarn for maximum comfort and durability.",
+        featured: true
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
     },
     {
         id: 2,
         name: "Classic Denim Jeans",
         price: 59.99,
+<<<<<<< HEAD
         image: jeans,
         description: "Timeless denim jeans that go with everything. Featuring a comfortable fit and durable construction for everyday wear.",
         featured: true,
         category: "jeans, pants, denim, black"
+=======
+        image: "https://via.placeholder.com/300x400?text=Classic+Denim+Jeans",
+        description: "Timeless denim jeans that go with everything. Featuring a comfortable fit and durable construction for everyday wear.",
+        featured: true
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
     },
     {
         id: 3,
         name: "Floral Summer Dress",
         price: 49.99,
+<<<<<<< HEAD
         image: floralDress,
         description: "A light and airy dress with beautiful floral patterns, perfect for warm summer days and special occasions.",
         featured: true,
         category: "dress, floral, summer, pink"
+=======
+        image: "https://via.placeholder.com/300x400?text=Floral+Summer+Dress",
+        description: "A light and airy dress with beautiful floral patterns, perfect for warm summer days and special occasions.",
+        featured: true
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
     },
     {
         id: 4,
         name: "Casual Cotton T-Shirt",
         price: 24.99,
+<<<<<<< HEAD
         image: shirt,
         description: "A soft, comfortable cotton t-shirt available in multiple colors. A wardrobe essential for casual everyday style.",
         featured: false,
         category: "shirt, graphic, cotton"
+=======
+        image: "https://via.placeholder.com/300x400?text=Cotton+T-Shirt",
+        description: "A soft, comfortable cotton t-shirt available in multiple colors. A wardrobe essential for casual everyday style.",
+        featured: false
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
     },
     {
         id: 5,
         name: "Elegant Evening Gown",
         price: 129.99,
+<<<<<<< HEAD
         image: eveningGown,
         description: "A stunning evening gown designed for special occasions. Features elegant detailing and a flattering silhouette.",
         featured: true,
         category: "dress, gown, formal wear, red"
+=======
+        image: "https://via.placeholder.com/300x400?text=Evening+Gown",
+        description: "A stunning evening gown designed for special occasions. Features elegant detailing and a flattering silhouette.",
+        featured: true
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
     },
     {
         id: 6,
         name: "Leather Jacket",
         price: 199.99,
+<<<<<<< HEAD
         image: leather,
         description: "A classic leather jacket that adds an edge to any outfit. Made from high-quality leather with a comfortable lining.",
         featured: false,
         category: "jacket, outerwear, leather, black"
+=======
+        image: "https://via.placeholder.com/300x400?text=Leather+Jacket",
+        description: "A classic leather jacket that adds an edge to any outfit. Made from high-quality leather with a comfortable lining.",
+        featured: false
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
     },
     {
         id: 7,
         name: "Knit Cardigan",
         price: 79.99,
+<<<<<<< HEAD
         image: cardigan,
         description: "A versatile knit cardigan that can be dressed up or down. Perfect for layering in any season.",
         featured: false,
         category: "creme, cardigan, outerwear, knit, cashmere"
+=======
+        image: "https://via.placeholder.com/300x400?text=Knit+Cardigan",
+        description: "A versatile knit cardigan that can be dressed up or down. Perfect for layering in any season.",
+        featured: false
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
     },
     {
         id: 8,
         name: "Summer Straw Hat",
         price: 34.99,
+<<<<<<< HEAD
         image: straw,
         description: "A stylish straw hat perfect for beach days and summer outings. Provides shade while keeping you looking fashionable.",
         featured: false,
@@ -401,6 +447,11 @@ const initialItems = [
         description: "Whimsical moon and star drop earrings with a hint of sparkle. A dreamy finishing touch for evening wear.",
         featured: true,
         category: "jewelry, earrings, accessory, celestial, gold"
+=======
+        image: "https://via.placeholder.com/300x400?text=Straw+Hat",
+        description: "A stylish straw hat perfect for beach days and summer outings. Provides shade while keeping you looking fashionable.",
+        featured: false
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
     }
 ];
 
@@ -439,7 +490,12 @@ export const ItemProvider = ({ children }) => {
         if (searchQuery) {
             const query = searchQuery.toLowerCase();
             const results = items.filter(item =>
+<<<<<<< HEAD
                 item.name.toLowerCase().includes(" " + query) || item.category.toLowerCase().includes(query)
+=======
+                item.name.toLowerCase().includes(query) ||
+                item.description.toLowerCase().includes(query)
+>>>>>>> 57a90beea039a10044566db915a3b1d0e145890a
             );
             setSearchResults(results);
         } else {
